@@ -13,7 +13,7 @@ type TLFunction* = ref object of TL
 
 method getTypeName*(self: TL): string {.base.} = "TL"
 
-method TLEncode*(self: TL): seq[uint8] {.base, locks: "unknown".} = raise newException(Exception, "Trying to encode a generic object")
+method TLEncode*(self: TL): seq[uint8] {.base, locks: "unknown".} = raise newException(CatchableError, "Trying to encode a generic object")
 
 proc TLEncode*(self: seq[TL]): seq[uint8] 
 

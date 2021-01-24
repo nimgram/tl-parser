@@ -283,7 +283,7 @@ proc generateRawFile*(mtprotoJson, apiJson: JsonNode) =
     copv.add(&"        of uint32(2924480661):\n            var tmp = new FutureSalts\n            tmp.TLDecode(bytes)\n            self = tmp\n            return\n")
     copv.add(&"        of uint32(155834844):\n            var tmp = new FutureSalt\n            tmp.TLDecode(bytes)\n            self = tmp\n            return\n")
  
-    copv = "\nproc TLDecode*(self: var TL, bytes: var ScalingSeq[uint8]) = \n" & copv & "\n        else:\n            raise newException(Exception, &\"Key {id} was not found\")"
+    copv = "\nproc TLDecode*(self: var TL, bytes: var ScalingSeq[uint8]) = \n" & copv & "\n        else:\n            raise newException(CatchableError, &\"Key {id} was not found\")"
     var layerversion = apiJson["layer"].getInt()
     writeFile("rpc/raw.nim", typeUtilsFile & &"const LAYER_VERSION* = {layerversion}\n" & copv)
 
