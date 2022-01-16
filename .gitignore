@@ -1,0 +1,6 @@
+tests/test
+.vscode
+tl
+nimcache/
+nimblecache/
+htmldocs/
