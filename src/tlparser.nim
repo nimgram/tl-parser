@@ -11,7 +11,7 @@
 # SOFTWARE.
 
 import strutils
-import tl/private/[utils, sections, constructors]
+import tlparser/private/[utils, sections, constructors]
 
 type TLParser* = ref object
     tl: string
