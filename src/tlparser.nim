@@ -11,7 +11,7 @@
 # SOFTWARE.
 
 import strutils
-import tlparser/private/[utils, sections, constructors]
+import tlparser/private/[utils, sections, constructors, flags, parameters, types]
 export TLConstructor, TLParameter, TLSection, TLType, TLFlag
 
 type TLParser* = ref object
