@@ -12,8 +12,9 @@
 
 import strutils
 import tlparser/private/[utils, sections, constructors, flags, parameters, types]
-export TLConstructor, TLParameter, TLSection, TLType, TLFlag
-
+export TLConstructor, TLParameterType, TLParameterTypeFlag,
+        TLParameterTypeSpecified, TLParameter, TLSection, TLType, TLFlag
+        
 type TLParser* = ref object
     tl: string
     section: TLSection
