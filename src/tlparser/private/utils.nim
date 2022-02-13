@@ -26,16 +26,10 @@ proc stripTLComments*(data: string): string =
     for i, c in data:
         if not comment and $prevChar & $data[i] == "/*":
             result.add(c)
-            when NimMajor == 1 and NimMinor < 6:
-                result.delete(len(result)-1, len(result)-1)
-            else:
-                result.delete(len(result)-1..len(result)-1)
+            result.delete(len(result)-1..len(result)-1)
             multilineComment = true
         if not multilineComment and not comment and $data[i] & $prevChar == "//":
-            when NimMajor == 1 and NimMinor < 6:
-                result.delete(len(result)-1, len(result)-1)
-            else:
-                result.delete(len(result)-1..len(result)-1)
+            result.delete(len(result)-1..len(result)-1)
             comment = true
         if c == '\n':
             comment = false

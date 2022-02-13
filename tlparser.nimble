@@ -9,5 +9,5 @@ srcDir        = "src"
 
 # Dependencies
 
-requires "nim >= 1.4.2"
+requires "nim >= 1.6.0"
 requires "crc32 >= 0.5.0"
