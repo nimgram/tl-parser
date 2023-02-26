@@ -90,6 +90,7 @@ proc parse*(constructor: string, section: TLSection = Types): TLConstructor =
         # Example: {X:Type}
         if parsedParameter.anytype:
             genericDefinitions.add(parsedParameter.name)
+            result.parameters.add(parsedParameter)
             continue
 
         if parsedParameter.parameterType.isNone():

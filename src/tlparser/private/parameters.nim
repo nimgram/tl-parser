@@ -29,7 +29,7 @@ type TLParameterTypeSpecified* = ref object of TLParameterType ## A normal type,
     flag*: Option[TLFlag] ## If this is a conditional type (may appear only sometimes), the original flag to check if it exists
 
 
-proc parseParameterType(parameterType: string): TLParameterType =
+proc parseParameterType*(parameterType: string): TLParameterType =
     if parameterType == "#":
         return TLParameterTypeFlag()
 
