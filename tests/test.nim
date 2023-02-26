@@ -129,10 +129,10 @@ proc constructorsTest =
   doAssert test.parameters[1].parameterType.get().TLParameterTypeSpecified.flag.get().index == 0
 
   test = parse("genericreftest#1111 {X:Type} acd:!X = aaaa")
-  doAssert test.parameters[0].name == "acd"
-  doAssert test.parameters[0].parameterType.isSome()
-  doAssert test.parameters[0].parameterType.get() of TLParameterTypeSpecified
-  doAssert test.parameters[0].parameterType.get().TLParameterTypeSpecified.`type`.genericReference
+  doAssert test.parameters[1].name == "acd"
+  doAssert test.parameters[1].parameterType.isSome()
+  doAssert test.parameters[1].parameterType.get() of TLParameterTypeSpecified
+  doAssert test.parameters[1].parameterType.get().TLParameterTypeSpecified.`type`.genericReference
 
 when isMainModule:
   echo "Starting utils module tests..."
